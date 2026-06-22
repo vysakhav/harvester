@@ -472,6 +472,9 @@ char * getDeviceMac()
 #if defined (_HUB4_PRODUCT_REQ_) || defined(_SR300_PRODUCT_REQ_) || defined(_SCER11BEL_PRODUCT_REQ_) || defined(_SCXF11BFL_PRODUCT_REQ_)
         char getList[256] = "Device.DeviceInfo.X_COMCAST-COM_WAN_MAC";
         char* getList1[] = {"Device.DeviceInfo.X_COMCAST-COM_WAN_MAC"};
+#elif defined(PON_GATEWAY)  /* PON/Fiber based gateways needs to be use Device.DeviceInfo.X_COMCAST-COM_WAN_MAC */
+        char getList[256] = "Device.DeviceInfo.X_COMCAST-COM_WAN_MAC";
+        char* getList1[] = {"Device.DeviceInfo.X_COMCAST-COM_WAN_MAC"};
 #else
         char getList[256] = "Device.X_CISCO_COM_CableModem.MACAddress";
         char* getList1[] = {"Device.X_CISCO_COM_CableModem.MACAddress"};
